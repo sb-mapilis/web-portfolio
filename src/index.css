@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@keyframes growX {
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes growY {
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes revealMask {
+  to {
+    mask-size: 200% 200%;
+    -webkit-mask-size: 200% 200%;
+  }
+}
+:root {
+  --color-text: rgba(255, 255, 255, 0.87);
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-weight: 400;
+  --font-style: normal;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
+  line-height: 1.5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Helvetica Neue", sans-serif;
+  background: linear-gradient(to right, #000000, #555555, #5b3c3c);
+}
+
+body p {
+  font-family: "Comic Neue", cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  gap: 40px;
+}
+
+.navbar-menu {
+  position: relative;
+  display: flex;
+  gap: 80px;
+  top: 1rem;
+  padding: 1rem;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .navbar-menu {
+    gap: 50px;
+    justify-content: flex-start;
+  }
+}
+
+nav a {
+  font-family: "Charm", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  transform: scale(1.5);
+  text-decoration: none;
+}
+nav a:hover {
+  transform: scale(2);
+}
+
+.content-section {
+  padding: 5rem;
+}
+@media (max-width: 768px) {
+  .content-section {
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+.corner-lines {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.h-line,
+.v-line {
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 0.7;
+}
+
+.h-line {
+  height: 5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: growX 0.6s ease-out forwards;
+}
+.h-line:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.h-line:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.h-line:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.v-line {
+  width: 5px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: growY 0.6s ease-out forwards;
+}
+.v-line:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.v-line:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.v-line:nth-child(6) {
+  animation-delay: 0.4s;
+}
+
+/*# sourceMappingURL=index.css.map */

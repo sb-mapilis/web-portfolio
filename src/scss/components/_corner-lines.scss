@@ -1,0 +1,51 @@
+@use "../base/variables" as *;
+@use "../base/animations";
+
+.corner-lines {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.h-line,
+.v-line {
+  position: absolute;
+  background-color: $white;
+  opacity: 0.7;
+}
+
+.h-line {
+  height: 5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: growX $anim-duration ease-out forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+.v-line {
+  width: 5px;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  animation: growY $anim-duration ease-out forwards;
+
+  &:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  &:nth-child(5) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(6) {
+    animation-delay: 0.4s;
+  }
+}

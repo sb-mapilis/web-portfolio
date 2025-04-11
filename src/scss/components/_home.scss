@@ -1,0 +1,47 @@
+@use "../base/variables" as *;
+@use "../base/animations";
+
+// Container for the home section
+.home-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: $padding-large;
+  gap: $gap-medium;
+}
+
+.navbar-menu {
+  position: relative;
+  display: flex;
+  gap: $gap-large;
+  top: 1rem;
+  padding: $padding-small;
+  justify-content: flex-end;
+
+  @media (max-width: $breakpoint-md) {
+    gap: $gap-medium + $gap-small;
+    justify-content: flex-start;
+  }
+}
+
+nav a {
+  font-family: "Charm", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: $white;
+  transform: scale(1.5);
+  text-decoration: none;
+
+  &:hover {
+    transform: scale(2);
+  }
+}
+// Section for content within the home container
+.content-section {
+  padding: $padding-large;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $padding-small;
+    width: 100%;
+  }
+}
