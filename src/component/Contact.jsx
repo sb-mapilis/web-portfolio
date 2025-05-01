@@ -26,8 +26,8 @@ const Contact = () => {
       <h3 className="contact-title">Contact</h3>
       <p>
         I would love to hear from you. You can message me on whatsApp, twitter,
-        e-mail me or simply fill out this form to get in touch. You can also
-        find me on Github. Let's get to know each other!
+        e-mail me to get in touch. You can also find me on Github. Let's get to
+        know each other!
       </p>
       <div className="icon-container">
         {socialLinks.map((link, index) => (

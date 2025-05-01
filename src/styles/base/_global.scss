@@ -30,9 +30,6 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
   }
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
 }
 
 body p {
@@ -41,6 +38,9 @@ body p {
 
 html {
   scroll-behavior: smooth;
+
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
 
 .scroll-container {
@@ -49,10 +49,13 @@ html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
+
+#profile {
+  height: 100vh;
+}
 #profile,
 #projects,
 #contact {
   scroll-snap-align: start;
   box-sizing: border-box;
-  height: 100vh;
 }
