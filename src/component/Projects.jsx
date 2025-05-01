@@ -1,4 +1,6 @@
 import React from "react";
+import translation from "../assets/translation.webp";
+import project from "../assets/project.webp";
 
 const Projects = () => {
   return (
@@ -7,7 +9,7 @@ const Projects = () => {
       <div className="projects">
         <div className="project-card">
           <div className="img-container">
-            <img src="/src/assets/project.webp" alt="Project website" />
+            <img src={project} alt="Project website" />
           </div>
           <div className="project-info">
             <h3>
@@ -34,7 +36,7 @@ const Projects = () => {
         </div>
         <div className="project-card">
           <div className="img-container">
-            <img src="/src/assets/translation.webp" alt="translation website" />
+            <img src={translation} alt="translation website" />
           </div>
           <div className="project-info">
             <h3>
