@@ -17,12 +17,22 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 body {
   margin: 0;
   overflow-x: hidden;
   font-family: "Helvetica Neue", sans-serif;
   background: linear-gradient(to right, #000000, #555555, #5b3c3c);
+
+  * {
+    color: #fff; // Optional: light text color for contrast
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 body p {
@@ -31,4 +41,18 @@ body p {
 
 html {
   scroll-behavior: smooth;
+}
+
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+#profile,
+#projects,
+#contact {
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  height: 100vh;
 }

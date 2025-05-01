@@ -16,6 +16,7 @@
   opacity: 0.7;
 }
 
+/* Horizontal line animation */
 .h-line {
   height: 5px;
   transform: scaleX(0);
@@ -24,28 +25,70 @@
 
   &:nth-child(1) {
     animation-delay: 0.2s;
+
+    width: 95vw;
   }
   &:nth-child(2) {
     animation-delay: 0.3s;
+
+    width: 85vw;
   }
   &:nth-child(3) {
     animation-delay: 0.4s;
+
+    width: 75vw;
   }
 }
 
+/* Vertical line animation */
 .v-line {
-  width: 5px;
   transform: scaleY(0);
   transform-origin: bottom;
   animation: growY $anim-duration ease-out forwards;
 
   &:nth-child(4) {
     animation-delay: 0.2s;
+    height: 70vh;
+    width: 5px;
   }
   &:nth-child(5) {
     animation-delay: 0.3s;
+    height: 80vh;
+    width: 5px;
   }
   &:nth-child(6) {
     animation-delay: 0.4s;
+    height: 90vh;
+    width: 5px;
+  }
+}
+
+/* Specific line positioning — must be global to match the class names */
+.line-1 {
+  top: 0;
+  left: 0;
+}
+
+.line-2 {
+  top: 20px;
+  left: 20px;
+}
+
+.line-3 {
+  top: 40px;
+  left: 40px;
+}
+
+@media (max-width: $breakpoint-md) {
+  .corner-lines {
+    .line-2 {
+      top: 10px;
+      left: 10px;
+    }
+
+    .line-3 {
+      top: 20px;
+      left: 20px;
+    }
   }
 }
