@@ -146,6 +146,7 @@
   .projects-container {
     padding: $padding-medium $padding-small;
     min-height: fit-content;
+    align-items: flex-start;
   }
 
   .projects-grid {
