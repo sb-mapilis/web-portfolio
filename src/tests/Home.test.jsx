@@ -4,7 +4,7 @@ import Home from '../component/Home';
 describe('Home Component', () => {
   test('renders without crashing', () => {
     render(<Home />);
-    expect(screen.getByText(/welcome to my little corner/i)).toBeInTheDocument();
+    expect(screen.getByText(/hey there/i)).toBeInTheDocument();
   });
 
   test('renders navbar with all items', () => {

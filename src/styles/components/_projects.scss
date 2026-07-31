@@ -1,91 +1,154 @@
 @use "../base/variables" as *;
-@use "../base/animations";
 
+// ── Section wrapper ──────────────────────────────────────────
 .projects-container {
   display: flex;
-  flex-direction: row;
-  gap: $gap-small;
+  flex-direction: column;
   align-items: center;
-  justify-items: center;
-  padding-left: 5rem;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem $padding-large;
   box-sizing: border-box;
+  min-height: 100vh;
+}
 
-  .projects-title {
-    writing-mode: vertical-rl; /* right to left vertical */
-    text-orientation: upright;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    letter-spacing: 10px;
-    font-family: "Comic Neue", cursive;
+.projects-title {
+  font-family: "Comic Neue", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: $white;
+  margin: 0;
+}
+
+// ── 3-column grid ────────────────────────────────────────────
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+// ── Card ─────────────────────────────────────────────────────
+.project-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+}
+
+// Image with overlay link on hover
+.project-card__image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
   }
 
-  @media (max-width: $breakpoint-md) {
-    padding: $padding-small;
-    width: 100%;
-    flex-direction: column;
-    height: fit-content;
-    .projects-title {
-      writing-mode: horizontal-tb;
-    }
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
 
-    .projects {
-      padding: 1rem;
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  color: $white;
 
-      .project-card {
-        flex-direction: column;
-      }
+  .project-card__image:hover & {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+    outline: 2px solid $white;
+  }
+}
+
+// Card body
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem 1.1rem 1.2rem;
+  flex: 1;
+}
+
+.project-card__title {
+  font-family: "Charm", cursive;
+  font-size: 1.3rem;
+  margin: 0;
+
+  a {
+    color: $white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 0.75;
     }
   }
 }
 
-.projects {
+.project-card__desc {
+  font-family: "Comic Neue", cursive;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  flex: 1;
+}
+
+// Tech pills
+.project-card__stack {
   display: flex;
-  flex-direction: column;
-  padding: 2rem 3rem;
-  align-items: center;
-  gap: $gap-medium;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
-  .project-card {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    gap: 1rem;
-    border: 20px double #555555;
+  li {
+    font-family: "Comic Neue", cursive;
+    font-size: 0.7rem;
+    padding: 0.15rem 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.65);
+    white-space: nowrap;
+  }
+}
 
-    .img-container {
-      position: relative;
-      overflow: hidden;
+// ── Responsive ───────────────────────────────────────────────
+@media (max-width: $breakpoint-md) {
+  .projects-container {
+    padding: $padding-medium $padding-small;
+    min-height: fit-content;
+  }
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-
-    .project-info {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
-      gap: $gap-small;
-
-      * {
-        margin: 0;
-      }
-
-      h3 {
-        font-family: "Charm", cursive;
-        font-style: normal;
-        font-size: 1.5rem;
-
-        a {
-          color: white;
-          text-decoration: none;
-          cursor: pointer;
-        }
-      }
-    }
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }

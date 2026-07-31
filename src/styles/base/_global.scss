@@ -48,14 +48,15 @@ html {
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  padding-bottom: 44px; /* clear the sticky footer */
+  box-sizing: border-box;
 }
 
 #profile {
   height: 100vh;
 }
 #profile,
-#projects,
-#contact {
+#projects {
   scroll-snap-align: start;
   box-sizing: border-box;
 }

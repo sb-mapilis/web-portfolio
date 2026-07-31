@@ -1,0 +1,58 @@
+@use "../base/variables" as *;
+
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 2rem;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sticky-footer__links {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.sticky-footer__icon {
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  transition: color 0.2s, transform 0.2s;
+
+  &:hover {
+    color: $white;
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $white;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+.sticky-footer__email {
+  font-family: "Comic Neue", cursive;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: $breakpoint-md) {
+  .sticky-footer {
+    padding: 0.6rem 1.25rem;
+  }
+
+  .sticky-footer__email {
+    display: none;
+  }
+}

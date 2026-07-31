@@ -1,8 +1,7 @@
 import Home from "./component/Home";
-import CornerLines from "./component/CornerLines";
 import Projects from "./component/Projects";
+import StickyFooter from "./component/StickyFooter";
 import useScrollSpy from "./component/useScrollSpy";
-import Contact from "./component/Contact";
 import { useEffect } from "react";
 
 function App() {
@@ -24,12 +23,11 @@ function App() {
 
   return (
     <>
-      <CornerLines />
       <div className="scroll-container">
         <Home />
         <Projects />
-        <Contact />
       </div>
+      <StickyFooter />
     </>
   );
 }
