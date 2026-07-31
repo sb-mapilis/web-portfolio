@@ -55,7 +55,7 @@ function Home() {
           </p>
 
           <p className="hero-bio">
-            Self-taught web developer with ~3 years of hands-on experience.
+            Self-taught web developer with ~4 years of hands-on experience.
             Started with a 404 error, turned it into a full-on obsession with
             code. I enjoy slow mornings, falling leaves 🍂, and hot coffee ☕.
           </p>
