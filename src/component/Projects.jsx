@@ -9,7 +9,7 @@ const projects = [
     image: garden,
     alt: "Free Stonemason website",
     title: "Free Stonemason",
-    url: "https://garden-stone.pages.dev/pl//",
+    url: "https://freestonemason.pl/",
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Cloudflare Pages"],
     description:
       "A responsive business website for a Polish stonemasonry company. Multilingual (PL, EN, DE), project galleries, Google Maps, contact forms, and SEO-focused architecture.",

@@ -1,0 +1,192 @@
+.bubble-field {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble-field span {
+  position: absolute;
+  top: -12vh;
+  left: var(--bubble-left);
+  width: var(--bubble-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 24%,
+    rgba(255, 255, 255, 0.82) 0%,
+    var(--bubble-color) 24%,
+    rgba(255, 255, 255, 0.18) 62%,
+    rgba(255, 255, 255, 0.42) 100%
+  );
+  border: 1px solid rgba(255,  255, 255, 0.58);
+  box-shadow:
+    inset -5px -7px 12px rgba(52, 75, 96, 0.1),
+    inset 3px 4px 8px rgba(255, 255, 255, 0.48),
+    0 2px 8px rgba(52, 75, 96, 0.045);
+  opacity: 0.7;
+  animation: bubble-drift var(--bubble-duration) linear var(--bubble-delay) infinite;
+}
+
+.bubble-field span:nth-child(1) {
+  --bubble-left: 8%;
+  --bubble-size: 34px;
+  --bubble-color: rgba(190, 217, 244, 0.7);
+  --bubble-opacity: 0.35;
+  --bubble-duration: 32s;
+  --bubble-delay: -21s;
+}
+
+.bubble-field span:nth-child(2) {
+  --bubble-left: 21%;
+  --bubble-size: 68px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.3;
+  --bubble-duration: 39s;
+  --bubble-delay: -8s;
+}
+
+.bubble-field span:nth-child(3) {
+  --bubble-left: 36%;
+  --bubble-size: 24px;
+  --bubble-color: rgba(190, 217, 244, 0.75);
+  --bubble-opacity: 0.4;
+  --bubble-duration: 28s;
+  --bubble-delay: -17s;
+}
+
+.bubble-field span:nth-child(4) {
+  --bubble-left: 49%;
+  --bubble-size: 52px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.28;
+  --bubble-duration: 36s;
+  --bubble-delay: -30s;
+}
+
+.bubble-field span:nth-child(5) {
+  --bubble-left: 63%;
+  --bubble-size: 30px;
+  --bubble-color: rgba(190, 217, 244, 0.75);
+  --bubble-opacity: 0.38;
+  --bubble-duration: 31s;
+  --bubble-delay: -12s;
+}
+
+.bubble-field span:nth-child(6) {
+  --bubble-left: 76%;
+  --bubble-size: 76px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.25;
+  --bubble-duration: 42s;
+  --bubble-delay: -25s;
+}
+
+.bubble-field span:nth-child(7) {
+  --bubble-left: 89%;
+  --bubble-size: 42px;
+  --bubble-color: rgba(190, 217, 244, 0.75);
+  --bubble-opacity: 0.32;
+  --bubble-duration: 34s;
+  --bubble-delay: -5s;
+}
+
+.bubble-field span:nth-child(8) {
+  --bubble-left: 56%;
+  --bubble-size: 20px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.4;
+  --bubble-duration: 27s;
+  --bubble-delay: -23s;
+}
+
+.bubble-field span:nth-child(9) {
+  --bubble-left: 3%;
+  --bubble-size: 46px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.28;
+  --bubble-duration: 37s;
+  --bubble-delay: -11s;
+}
+
+.bubble-field span:nth-child(10) {
+  --bubble-left: 16%;
+  --bubble-size: 22px;
+  --bubble-color: rgba(190, 217, 244, 0.75);
+  --bubble-opacity: 0.38;
+  --bubble-duration: 29s;
+  --bubble-delay: -19s;
+}
+
+.bubble-field span:nth-child(11) {
+  --bubble-left: 28%;
+  --bubble-size: 58px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.26;
+  --bubble-duration: 41s;
+  --bubble-delay: -33s;
+}
+
+.bubble-field span:nth-child(12) {
+  --bubble-left: 42%;
+  --bubble-size: 32px;
+  --bubble-color: rgba(190, 217, 244, 0.75);
+  --bubble-opacity: 0.34;
+  --bubble-duration: 33s;
+  --bubble-delay: -7s;
+}
+
+.bubble-field span:nth-child(13) {
+  --bubble-left: 54%;
+  --bubble-size: 82px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.2;
+  --bubble-duration: 44s;
+  --bubble-delay: -27s;
+}
+
+.bubble-field span:nth-child(14) {
+  --bubble-left: 68%;
+  --bubble-size: 26px;
+  --bubble-color: rgba(190, 217, 244, 0.75);
+  --bubble-opacity: 0.4;
+  --bubble-duration: 30s;
+  --bubble-delay: -14s;
+}
+
+.bubble-field span:nth-child(15) {
+  --bubble-left: 81%;
+  --bubble-size: 48px;
+  --bubble-color: rgba(252, 251, 182, 0.8);
+  --bubble-opacity: 0.3;
+  --bubble-duration: 38s;
+  --bubble-delay: -22s;
+}
+
+@keyframes bubble-drift {
+  0% {
+    transform: translate3d(-12px, 0, 0);
+  }
+  50% {
+    transform: translate3d(18px, 58vh, 0);
+  }
+  100% {
+    transform: translate3d(-8px, 118vh, 0);
+  }
+}
+
+.navbar-menu,
+.hero-text,
+.projects-title,
+.project-card {
+  position: relative;
+  z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble-field span {
+    animation: none;
+    opacity: 0.7;
+  }
+}

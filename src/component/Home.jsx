@@ -31,15 +31,6 @@ function Home() {
   return (
     <div id="profile" className="home-container">
       {/* ── Nav ── */}
-      <nav className="navbar-menu">
-        <a href="#profile" className="navbar-item">
-          Profile
-        </a>
-        <a href="#projects" className="navbar-item">
-          Projects
-        </a>
-      </nav>
-
       {/* ── Hero ── */}
       <div className="hero">
         <div className="hero-text">
